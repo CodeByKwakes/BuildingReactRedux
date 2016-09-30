@@ -17,8 +17,7 @@ class ManageCoursePage extends React.Component {
     render() {
         return (
             <CourseForm
-               /*allAuthors={this.props.authors}*/
-              allAuthors={[]}
+              allAuthors={this.props.authors}
               course={this.state.course}
               errors={this.state.errors}
              />
@@ -35,16 +34,16 @@ function mapStateToProps(state, ownProps) {
   let course = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
 
 
-/*  const authorsFormattedForDropdown = state.authors.map((author) => {
+  const authorsFormattedForDropdown = state.authors.map((author) => {
     return {
       value: author.id,
-      text: author.firstName
+      text: author.firstName + ' ' + author.lastName
     };
-  });*/
+  });
 
   return {
-    course: course
-    // authors: authorsFormattedForDropdown
+    course: course,
+    authors: authorsFormattedForDropdown
   };
 }
 
